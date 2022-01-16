@@ -3,13 +3,8 @@
 ### How to run (mac)
 1. Python3 -m venv venv
 2. source (or .) venv/bin/activate (mac)
-2. source (or .) venv\scripts\activate (Windows)
+   source (or .) venv\scripts\activate (Windows)
 4. pip install -r requirements.txt
-
-### How to run
-1. Python3 -m venv venv
-
-3. pip install -r requirements.txt
 
 ### About
 

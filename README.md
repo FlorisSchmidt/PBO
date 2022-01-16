@@ -1,6 +1,6 @@
 # PBO
 
-## - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text="FLORIS JE BENT EEN LUIE KANKER HOND") ##
+## :exclamation: :exclamation: FLORIS JE BENT EEN LUIE KANKER HOND :exclamation: :exclamation: ##
 
 This repository is an academic exercise for the course Business Process Optimization (
 X_400213) for the Vrije Universiteit Amsterdam. The goal of this project is building a decision support system (DSS) 

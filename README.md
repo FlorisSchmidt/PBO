@@ -1,6 +1,11 @@
 # PBO
 
-## :exclamation: :exclamation: FLORIS JE BENT EEN LUIE KANKER HOND :exclamation: :exclamation: ##
+### How to run
+1. Python3 -m venv venv
+2. . venv/bin/activate
+3. pip install -r requirements.txt
+
+### About
 
 This repository is an academic exercise for the course Business Process Optimization (
 X_400213) for the Vrije Universiteit Amsterdam. The goal of this project is building a decision support system (DSS). 

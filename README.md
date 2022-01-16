@@ -1,9 +1,14 @@
 # PBO
 
-### How to run
+### How to run (Mac)
 1. Python3 -m venv venv
-2. . venv/bin/activate
+2. source (or .) venv/bin/activate (Mac) OR source (or .) venv\scripts\activate (Windows)
 3. pip install -r requirements.txt
+
+### How to run (Windows
+1. py -m venv venv
+2. source (or .) venv\scripts\activate
+3. pip install -r .\requirements.txt
 
 ### About
 

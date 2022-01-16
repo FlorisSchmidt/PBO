@@ -3,20 +3,30 @@
 ## :exclamation: :exclamation: FLORIS JE BENT EEN LUIE KANKER HOND :exclamation: :exclamation: ##
 
 This repository is an academic exercise for the course Business Process Optimization (
-X_400213) for the Vrije Universiteit Amsterdam. The goal of this project is building a decision support system (DSS) 
+X_400213) for the Vrije Universiteit Amsterdam. The goal of this project is building a decision support system (DSS). 
 
 
-### A/B Testing
+### Scenario
+In the given scenario, a website manager wants to know which version of their website will result in the most clicks. The website consists of three elements: A header, a text and a picture. The website manager has multiple variations of all three elements and wants to test various combinations. All combinations must contain one header, one text and one picture. 
+
+We will create a decision support system that allows the website manager to run and analyse website selection experiments using multiple algorithms.
+
+
+
+### Website selection algorithms. 
 Hier uitleg wat A/B testing is en welke algoritmes we gebruiken
 
+- AB Testing
+- Multivariate testing
+- Epsilon greedy
+- Thompson sampling
 
 
-### Structure of DSS 
+### Structure of repository
 The decision support system consists of three main components: 
 1. Data generation
 2. A website selection algorithms
 3. A graphical user interface
-
 
 
 ### Data generation and representation

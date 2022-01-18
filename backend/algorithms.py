@@ -1,3 +1,5 @@
+from scipy.stats import f_oneway
+
 def run_test(data, budget, algorithm):
     #1 Unpack data 
     #2 Pass to right test

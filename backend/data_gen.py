@@ -67,11 +67,11 @@ def _sigmoid_(x):
 def _generate_effects_(A, B, n_texts=3, n_headers=3, n_pictures=3):
     header_effects, text_effects,  picture_effects = dict(), dict(), dict()
     for i in range(n_texts):
-        header_effects[f"header_{i+1}"] = np.random.uniform(A, B)
+        header_effects[f"{i+1}"] = np.random.uniform(A, B)
     for i in range(n_texts):
-        text_effects[f"text_{i+1}"] = np.random.uniform(A, B)
+        text_effects[f"{i+1}"] = np.random.uniform(A, B)
     for i in range(n_texts):
-        picture_effects[f"picture_{i+1}"] = np.random.uniform(A, B)
+        picture_effects[f"{i+1}"] = np.random.uniform(A, B)
     return {"header_effects": header_effects, "text_effects": text_effects, "picture_effects": picture_effects}
 
 
@@ -83,7 +83,10 @@ def _generate_interaction_probs_(effect_dict):
     combinations = product(header_effects.keys(),
                            text_effects.keys(), picture_effects.keys())
     for combination in combinations:
-        interaction_probs[combination] = _sigmoid_(header_effects.get(
+        comb_string = ''
+        for item in combination:
+            comb_string += item
+        interaction_probs[comb_string] = _sigmoid_(header_effects.get(
             combination[0]) + text_effects.get(combination[1]) + picture_effects.get(combination[2]))
     return interaction_probs
 

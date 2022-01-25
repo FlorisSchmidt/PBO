@@ -9,6 +9,7 @@ class Website:
         self.num = 0
         self.realisations = realisations[website]
         self.average = 0
+        self.last_average = 0
         self.totalSum = 0
         self.name = website
 
@@ -22,6 +23,7 @@ class Website:
 
     def pull(self):
         self.totalSum+=self.__next__()
+        self.last_average = self.average
         self.average = self.totalSum/self.num
         return self.average
 

@@ -2,3 +2,4 @@ venv
 .DS_Store
 .gitignore
 .vscode/launch.json
+*.pyc

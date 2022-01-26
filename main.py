@@ -22,7 +22,7 @@ multi_dropdown = dcc.Dropdown(options=options,
 accuracyInput = dcc.Slider(
                         id='accuracy',
                         min=0.5,
-                        max=1,
+                        max=0.99,
                         step=0.01,
                         value=0.95,
                         tooltip={"placement": "bottom", "always_visible": True}
@@ -84,18 +84,18 @@ app.layout = html.Div([
     State('dropdown', 'value'),
     State('budget', 'value'),
     State('accuracy','value'),
-    State('label','children'),
     prevent_initial_call=True
 )
-def run_algo(_,websiteList,budget,accuracy,output):
+def run_algo(_,websiteList,budget,accuracy):
     if(budget==None):
         budget=10000
     if(accuracy==None):
         accuracy = 0.95
     result = backend.run_experiment(websiteList,budget,accuracy)
     if len(result)==1:
-        return html.Li(f"{parseName(result[0].name)}"),"Found best website"
-    return [html.Li(f"{parseName(site.name)}") for site in result],"Not enough budget, best sites so far."
+        return html.Li(f"{parseName(result[0].name)}, Average click rate: {round(result[0].average*100,2)}%"),"Found best website"
+    result.sort(key=lambda x: x.average, reverse=True)
+    return [html.Li(f"{parseName(site.name)}, Average click rate:{round(site.average*100,2)}%") for site in result],"Not enough budget, best sites so far."
 
 def parseName(siteName: str):
     return f"Header {siteName[0]} text {siteName[1]} picture {siteName[2]}"

@@ -41,13 +41,6 @@ def succesive_elimination(S, budget, accuracy):
             if(p_max - a.average>=2*alpha_t):
                 S.remove(a)
         t+=1
-
-    if len(S)==1:
-        print(f'Best website found with {S[0].name}')
-    else:
-        print(f'Not enough budget to find difference between sites')
-        for site in S:
-            print(site.name)
     return S
 
 ### HELPER FUNCTIONS ###

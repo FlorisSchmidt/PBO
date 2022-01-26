@@ -1,8 +1,7 @@
-from data_gen import Website
 from typing import List
 from math import sqrt, log, pow
 
-def run_test(website_list: List(Website), budget, algorithm, accuracy):
+def run_test(website_list, budget, algorithm, accuracy):
     #1 Unpack data 
     #2 Pass to right test
     if algorithm == "se":
@@ -34,8 +33,6 @@ def succesive_elimination(website_list, budget, accuracy):
     while (len(S) > 1) and (budget-t>0):
         for site in S:
             site.pull()
-
-
         p_a = [site.average for site in S]
         p_max = max(p_a)
         n = len(p_a)

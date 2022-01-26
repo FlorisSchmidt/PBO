@@ -24,9 +24,8 @@ def epsilon_greedy(data, budget):
     pass
 
 
-def succesive_elimination(website_list, budget, accuracy):
+def succesive_elimination(S, budget, accuracy):
     t = 1
-    S = website_list
     c = 4
     delta = 1 - accuracy
 

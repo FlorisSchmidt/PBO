@@ -4,11 +4,15 @@
 1. Python3 -m venv venv
 2. source (or .) venv/bin/activate (Mac) OR source (or .) venv\scripts\activate (Windows)
 3. pip install -r requirements.txt
+4. Python3 main.py
+5. Visit http://127.0.0.1:8050
 
 ### How to run (Windows
 1. py -m venv venv
 2. source (or .) venv\scripts\activate
 3. pip install -r .\requirements.txt
+4. py main.py
+5. Visit http://127.0.0.1:8050
 
 ### About
 

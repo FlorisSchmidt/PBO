@@ -12,15 +12,11 @@ def run_test(website_list, budget, algorithm, accuracy):
         results = epsilon_greedy(website_list, budget)
     return results
 
-def standard_multivariate_test(data, budget):
+
+def UGapEb(data, budget):
     pass
 
-
-def thompson_sampling(data, budget):
-    pass
-
-
-def epsilon_greedy(data, budget):
+def UGapEc(data, budget):
     pass
 
 

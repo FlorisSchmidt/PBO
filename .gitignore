@@ -3,3 +3,4 @@ venv
 .gitignore
 .vscode/launch.json
 *.pyc
+backend/__pycache__/data_gen.cpython-39.pyc

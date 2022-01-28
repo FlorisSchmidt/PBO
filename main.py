@@ -135,14 +135,10 @@ def run_algo(_,websiteList,budget,accuracy):
 
     if len(bestWebsites)==1:
         meanGraph = getMeanGraph(allWebsites)
-        return html.Li(f"{parseName(bestWebsites[0].name)}, Average click rate: {round(bestWebsites[0].average*100,2)}%"),"Found best website", False, meanGraph
+        return html.Li(f"{bestWebsites[0].fullName}, Average click rate: {round(bestWebsites[0].average*100,2)}%"),"Found best website", False, meanGraph
     bestWebsites.sort(key=lambda x: x.average, reverse=True)
     meanGraph = getMeanGraph(allWebsites)
-    return [html.Li(f"{parseName(site.name)}, Average click rate:{round(site.average*100,2)}%") for site in bestWebsites],"Not enough budget, best sites so far.", False, meanGraph
-
-def parseName(siteName: str):
-    return f"Header {siteName[0]} text {siteName[1]} picture {siteName[2]}"
-
+    return [html.Li(f"{site.fullName}, Average click rate:{round(site.average*100,2)}%") for site in bestWebsites],"Not enough budget, best sites so far.", False, meanGraph
 
 def getMeanGraph(websites):
     fig = go.Figure()
@@ -158,7 +154,7 @@ def getMeanGraph(websites):
             "y": cumulativeRealisations,
             "line": {"shape": 'hv'},
             "mode": 'lines',
-            "name": parseName(site.name),
+            "name": site.fullName,
             "type": 'scatter',
             }
         fig.add_trace(trace)

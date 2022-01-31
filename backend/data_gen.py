@@ -13,6 +13,7 @@ class Website:
         self.last_average = 0
         self.totalSum = 0
         self.name = website
+        self.fullName = f"Header {website[0]} text {website[1]} picture {website[2]}"
 
     def __iter__(self):
         return self
@@ -32,6 +33,7 @@ class Website:
         self.average = 0
         self.totalSum = 0
         self.num = 0
+
 
 def generate_data(budget, website_list, effect_A, effect_B, normal_sd):
     '''

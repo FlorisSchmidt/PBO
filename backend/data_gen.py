@@ -5,8 +5,9 @@ from itertools import product
 class Website:
     """Iterator that counts upward forever"""
 
-    def __init__(self, website,realisations):
+    def __init__(self, website, p, realisations):
         self.num = 0
+        self.p = p
         self.realisations = realisations[website]
         self.average = 0
         self.last_average = 0
@@ -46,14 +47,16 @@ def generate_data(budget, website_list, effect_A, effect_B, normal_sd):
     '''
     element_effects = _generate_effects_(effect_A, effect_B)
     interaction_probs = _generate_interaction_probs_(element_effects)
+    synegestic_probs = dict()
     for prob in interaction_probs.keys():
-        interaction_probs[prob] = _generate_synergestic_effect_(
+        synegestic_probs[prob] = _generate_synergestic_effect_(
             interaction_probs[prob], normal_sd)
-    realisations = _generate_realisations_(budget, interaction_probs)
+    realisations = _generate_realisations_(budget, synegestic_probs)
     final_data = _select_data_(website_list, realisations)
-    websites = {}
+    websites = dict()
     for website in final_data:
-        websites[website] = Website(website,realisations)
+        p = synegestic_probs[website]
+        websites[website] = Website(website, p, realisations)
     return websites
 
 

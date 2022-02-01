@@ -1,4 +1,4 @@
-import data_gen as gen
+from . import data_gen as gen
 from math import sqrt, log, pow, inf
 
 ### ALGORTIHM ###

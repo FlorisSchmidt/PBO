@@ -1,6 +1,6 @@
 from typing import List
 from math import sqrt, log, pow, inf
-import ugape as ugap
+from . import ugape as ugap
 
 def run_test(website_list, budget, algorithm, accuracy, confidence, m):
     #1 Unpack data 

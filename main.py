@@ -98,7 +98,7 @@ app.layout = html.Div([
                                 ])
                             ]
                             )),
-                        dbc.Col(html.Div(
+                        dbc.Col(dbc.Spinner(html.Div(
                                     [
                                     html.H2('Recommendation',className="mb-3"),
                                     html.Br(),
@@ -106,7 +106,7 @@ app.layout = html.Div([
                                     html.Ol(id='my-list', children=[html.Li(site) for site in []]),
                                     graph
                                 ],className="shadow p-3 mb-5 bg-white rounded",style={'height': '80vh'}),
-                                ),
+                                )),
                         dbc.Col(html.Div(), width=1)
                         ])
                     ])
@@ -159,8 +159,6 @@ def getMeanGraph(websites):
             }
         fig.add_trace(trace)
     return fig
-
-    
 
 if __name__ == '__main__':
     app.run_server(debug=True, use_reloader=False)

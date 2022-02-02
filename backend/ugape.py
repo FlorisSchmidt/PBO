@@ -28,6 +28,7 @@ def UGapE(data, budget, accuracy, confidence, m, c=0.5):
         t += 1
         if (Bkt_dict[key] < accuracy):
             stopping_criteria = False
+            Jt = get_min_key(Bkt_dict, Jt)
             reason = 'Terminated because specified accuracy has been satisfied'
         elif budget == 0:
             stopping_criteria = False

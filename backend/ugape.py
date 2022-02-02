@@ -32,7 +32,7 @@ def UGapE(data, budget, accuracy, confidence, m, c):
         elif budget == 0:
             stopping_criteria = False
             reason = 'Terminated because budget is exhausted'
-    return Jt, reason
+    return Jt
     
 def select_arm(data, m, a):   
     current_arms = data

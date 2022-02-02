@@ -68,6 +68,9 @@ def _sigmoid_(x):
     sig = 1 / (1 + math.exp(-x))
     return sig
 
+def _tanh_(x):
+    tanh = (math.exp(x) - math.exp(-x)) / (math.exp(-x) + math.exp(x))
+    return tanh
 
 def _generate_effects_(A, B, n_texts=3, n_headers=3, n_pictures=3):
     header_effects, text_effects,  picture_effects = dict(), dict(), dict()
@@ -91,7 +94,7 @@ def _generate_interaction_probs_(effect_dict):
         comb_string = ''
         for item in combination:
             comb_string += item
-        interaction_probs[comb_string] = _sigmoid_(header_effects.get(
+        interaction_probs[comb_string] = _tanh_(header_effects.get(
             combination[0]) + text_effects.get(combination[1]) + picture_effects.get(combination[2]))
     return interaction_probs
 

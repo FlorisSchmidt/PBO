@@ -8,9 +8,7 @@ def run_test(website_list, budget, algorithm, accuracy, confidence, m):
     if algorithm == "se":
         results = succesive_elimination(website_list, budget, accuracy)
     elif algorithm == 'ugape':
-        results = ugap.UGapE(website_list, accuracy, budget, confidence, m, c=0.5)
-    elif algorithm == 'epsilon_greedy':
-        results = epsilon_greedy(website_list, budget)
+        results = ugap.UGapE(website_list, budget, accuracy, confidence, m, c=0.5)
     return results
 
 

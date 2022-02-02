@@ -3,18 +3,7 @@ from math import sqrt, log, pow, inf
 
 ### ALGORTIHM ###
 
-def UGapE(data, accuracy, budget, confidence, m, c):
-    '''
-    Inputs:
-    data: (dict) website name as key and website object as value
-    e: (float) accuracy parameter
-    m: (Int) number of optimal arms
-    delta: (float) confidence level
-    c: (float) exploration parameter (0.5 is always a good choice)
-
-    Outputs:
-    Set of m website objects (i.e. the m optimal arms)
-    '''
+def UGapE(data, budget, accuracy, confidence, m, c):
     K = len(data)
 
     ## Initialise
@@ -37,13 +26,13 @@ def UGapE(data, accuracy, budget, confidence, m, c):
 
         key = get_max_key(Bkt_dict, Jt)
         t += 1
-        if (Bkt_dict[key] >= accuracy):
+        if (Bkt_dict[key] < accuracy):
             stopping_criteria = False
             reason = 'Terminated because specified accuracy has been satisfied'
         elif budget == 0:
             stopping_criteria = False
             reason = 'Terminated because budget is exhausted'
-    return Jt
+    return Jt, reason
     
 def select_arm(data, m, a):   
     current_arms = data

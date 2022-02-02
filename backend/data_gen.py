@@ -100,7 +100,10 @@ def _generate_interaction_probs_(effect_dict):
 
 
 def _generate_synergestic_effect_(probability, sd):
-    return min(np.random.normal(probability, sd), 1)
+    shift = 0
+    while (shift < 0.05 or shift > 0.6):
+        shift = np.random.normal(probability, sd)
+    return shift
 
 
 def _generate_realisations_(budget, probabilities):

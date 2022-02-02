@@ -3,7 +3,7 @@ from math import sqrt, log, pow, inf
 
 ### ALGORTIHM ###
 
-def UGapE(data, budget, accuracy, confidence, m, c):
+def UGapE(data, budget, accuracy, confidence, m, c=0.5):
     K = len(data)
 
     ## Initialise

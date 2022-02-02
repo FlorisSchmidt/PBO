@@ -8,7 +8,7 @@ def run_test(website_list, budget, algorithm, accuracy, confidence, m):
     if algorithm == "se":
         results = succesive_elimination(website_list, budget, accuracy)
     elif algorithm == 'ugape':
-        results = ugap.UGapE(website_list, budget, accuracy, confidence, m, c=0.5)
+        results = ugap.UGapE(website_list, budget, accuracy, confidence, m)
     return results
 
 
